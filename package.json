@@ -23,7 +23,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2-runtime start ecosystem.config.js",
+    "docker-build": "docker build -t youtube-dl-webui:latest .",
+    "docker-run": "docker run --rm -p 8100:8100 --name youtube-dl-webui youtube-dl-webui:latest"
   },
   "repository": {
     "type": "git",

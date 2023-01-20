@@ -4,7 +4,6 @@ const ServiceError = require('../common/ServiceError');
 const { md5 } = require('../common/utils');
 const fs = require('fs');
 const path = require('path');
-const disk = require('diskusage');
 const config = require('../config');
 const store = require('../common/store');
 
@@ -21,6 +20,7 @@ setInterval(() => {
 
 async function getFreeSpace(path) {
   try {
+    const disk = require('diskusage');
     const { free } = await disk.check(path);
     return free
   } catch (err) {
@@ -45,7 +45,10 @@ async function listFiles() {
     for (const filename of filenames) {
       const stat = fs.statSync(path.resolve(dldir, dir, filename));
       const pathname = `/downloads/${dir}/${filename}`;
-      const url = `http://${config.host}:${config.port}${pathname}`;
+      let url = `http://${config.host}:${config.port}${pathname}`;
+      if (config.isProd) {
+        url = pathname;
+      }
       files.push({
         id: md5(pathname),
         dir,
