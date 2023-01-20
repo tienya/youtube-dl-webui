@@ -1,0 +1,39 @@
+{
+  "name": "youtube-dl-webui",
+  "version": "1.0.0",
+  "description": "Youtube Downloader WEBUI",
+  "main": "app.js",
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "diskusage": "^1.1.3",
+    "dotenv": "^16.0.3",
+    "glob": "^8.0.3",
+    "knex": "^2.3.0",
+    "koa": "^2.14.1",
+    "koa-body": "^6.0.1",
+    "koa-mount": "^4.0.0",
+    "koa-range": "^0.3.0",
+    "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "mysql": "^2.18.1",
+    "youtube-dl-exec": "^2.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tienya/youtube-dl-webui.git"
+  },
+  "keywords": [
+    "youtube-dl",
+    "webui"
+  ],
+  "author": "hillgor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tienya/youtube-dl-webui/issues"
+  },
+  "homepage": "https://github.com/tienya/youtube-dl-webui#readme"
+}

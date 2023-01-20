@@ -1,0 +1,11 @@
+
+#app {
+  min-width: 375px;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #000;
+}
+#app .el-table,
+#app .el-table thead {
+  color: #000;
+}
