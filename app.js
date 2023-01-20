@@ -10,6 +10,7 @@ const koaMount = require('koa-mount');
 const range = require('koa-range');
 const apiHandler = require('./app/middleware/apiHandler')
 const trimReqBody = require('./app/middleware/trimReqBody')
+const basicAuth = require('koa-basic-auth');
 
 const app = new Koa();
 
@@ -36,6 +37,25 @@ app.use(koaBody({
     });
   },
 }));
+
+
+if (config.auth.name) {
+  // custom 401 handling
+  app.use(async (ctx, next) => {
+    try {
+      await next();
+    } catch (err) {
+      if (401 == err.status) {
+        ctx.status = 401;
+        ctx.set('WWW-Authenticate', 'Basic');
+      } else {
+        throw err;
+      }
+    }
+  });
+  app.use(basicAuth(config.auth));
+}
+
 app.use(trimReqBody())
 app.use(apiHandler({ prefix: '/api/' }))
 

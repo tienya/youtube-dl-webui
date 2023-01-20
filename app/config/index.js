@@ -8,4 +8,8 @@ module.exports = {
   isProd: env.NODE_ENV === 'production',
   saveFilePath: env.FILE_PATH || path.resolve(__dirname, '../../downloads/.ydwebui'),
   saveInterval: 60 * 1000, //ms
+  auth: {
+    name: env.AUTH_USER || '',
+    pass: env.AUTH_PASS || '',
+  }
 }
