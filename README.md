@@ -1,6 +1,6 @@
 # youtube-dl-webui
 
-A web client for youtube-dl
+A web client for [youtube-dl/yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
 ## Supported url types
 
