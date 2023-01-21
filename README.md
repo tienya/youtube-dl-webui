@@ -10,6 +10,10 @@ docker run -d -p 8100:8100 \
   --name youtube-dl-webui hillwong/youtube-dl-webui:latest
 ```
 
+## Basic Authentication
+
+`AUTH_USER` and `AUTH_PASS` are used for basic authentication, if not needed, set it to an empty character
+
 ## Visit to webui
 
 `http://$IP:8100/`
