@@ -7,7 +7,7 @@ docker run -d -p 8100:8100 \
   -v "$PWD/downloads":/root/downloads \
   -e AUTH_USER='demo' \
   -e AUTH_PASS='demo@321' \
-  --name youtube-dl-webui youtube-dl-webui:latest
+  --name youtube-dl-webui hillwong/youtube-dl-webui:latest
 ```
 
 ## visit to webui
