@@ -2,6 +2,12 @@
 
 A web client for youtube-dl
 
+## Supported url types
+
+1. video: https://www.youtube.com/watch?v=txxyjM5dXgw
+2. channel: https://www.youtube.com/@PrimitiveSkillsnet/videos
+3. playlist: https://www.youtube.com/watch?v=8ra4ezAbAoA&list=PLu5jI_OEKlo_dzfvxGXBJqE-IdYOx-HMA
+
 ## Start from docker image
 
 ```
