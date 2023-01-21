@@ -24,8 +24,10 @@
   "devDependencies": {},
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js",
-    "docker-build": "docker build -t youtube-dl-webui:latest .",
-    "docker-run": "docker run --rm -p 8100:8100 --name youtube-dl-webui youtube-dl-webui:latest"
+    "build": "npm i && cd client && npm i && npm run build && cd ..",
+    "docker-build": "docker build -t hillwong/youtube-dl-webui:latest .",
+    "docker-publish": "docker push hillwong/youtube-dl-webui",
+    "docker-run": "docker run --rm -p 8100:8100 --name youtube-dl-webui hillwong/youtube-dl-webui:latest"
   },
   "repository": {
     "type": "git",
